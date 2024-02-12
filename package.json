@@ -10,8 +10,7 @@
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy --flat src/schema.json dist",
-    "generate": "quicktype -s schema src/schema.json -o src/schema.ts",
-    "pub": "pnpm build && pnpm version patch && pnpm git -am \"To Publish\" && pnpm git push && pnpm publish --access public"
+    "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
   },
   "keywords": [],
   "author": "",
