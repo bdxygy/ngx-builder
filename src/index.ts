@@ -13,7 +13,7 @@ export const createGreetingBuilder = (
   options: GreetingBuilderSchema,
   context: BuilderContext
 ): Observable<BuilderOutput> => {
-  context.logger.info("Hello from Greeting Builder", options);
+  context.logger.info(`Hello from Greeting Builder | ${JSON.stringify(options)}`, options);
 
   return of({ success: true });
 };
