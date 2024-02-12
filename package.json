@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "git": "git",
     "prebuild": "yarn clean && yarn generate",
     "build": "yarn prebuild && tsc && yarn postbuild",
     "postbuild": "yarn copy",
     "clean": "rimraf dist src/schema.ts",
     "copy": "cpy --flat src/schema.json dist",
     "generate": "quicktype -s schema src/schema.json -o src/schema.ts",
-    "pub": "pnpm build && pnpm version patch && pnpm publish --access public"
+    "pub": "pnpm build && pnpm version patch && pnpm git -am \"To Publish\" && pnpm git push && pnpm publish --access public"
   },
   "keywords": [],
   "author": "",
