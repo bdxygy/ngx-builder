@@ -1,0 +1,30 @@
+{
+  "name": "@ngx-builder/rspack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "yarn clean && yarn generate",
+    "build": "yarn prebuild && tsc && yarn postbuild",
+    "postbuild": "yarn copy",
+    "clean": "rimraf dist src/schema.ts",
+    "copy": "cpy --flat src/schema.json dist",
+    "generate": "quicktype -s schema src/schema.json -o src/schema.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular-devkit/architect": "0.1402.13",
+    "@angular-devkit/core": "14",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "cpy-cli": "^5.0.0",
+    "quicktype": "^23.0.81",
+    "rimraf": "^5.0.5",
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.3"
+  },
+  "builders": "builders.json"
+}

@@ -1,0 +1,17 @@
+{
+  "$id": "BuilderSchema",
+  "title": "Custom Builder",
+  "description": "Custom builder on learning stage",
+  "properties": {
+    "greeting": {
+      "type": "string",
+      "description": "Please greeting to everyone!",
+      "default": "Hello Guys!"
+    },
+    "path": {
+      "type": "string",
+      "description": "File to Greeting",
+      "default": "./greeting"
+    }
+  }
+}
